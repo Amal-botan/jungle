@@ -7,7 +7,11 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order! </h4>
-    <p>Email: <%= @order.email %> </p>
+    <% if current_user %>
+    <p>Email: <%= current_user.email %> </p>
+    <% elsif %>
+    <p>Vistor </p>
+    <% end %>
   </div>
 
   <div class="panel panel-default items">
